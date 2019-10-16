@@ -4,10 +4,8 @@
 #include <malloc.h>
 #include <assert.h>
 
-const char * s = NULL;
-int p = 0;
-int G(const char * str), GetE(), GetT(), GetP(), GetN();
+#define	WRONG_SYMB 666
 
-using namespace std;
+int G(const char * str), GetE(), GetT(), GetP(), GetN(); //these are names from semantics of recursive calculator
 
 
