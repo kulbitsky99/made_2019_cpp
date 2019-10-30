@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 class LinearAllocator
 {
@@ -10,14 +11,15 @@ public:
 	LinearAllocator() = default;
     LinearAllocator(int maxSize) : maxSize_(maxSize) {
     	memory_ = (char*) malloc(maxSize * sizeof(char));
+    	assert(memory_);
     	offset_ = memory_;
-    	std::cout << "Buffer of size " << maxSize << " created. Ready to be used." << '\n';
-    	std::cout << '\n';
+    	//std::cout << "Buffer of size " << maxSize << " created. Ready to be used." << '\n';
+    	//std::cout << '\n';
     };
     ~LinearAllocator() {
     	free(memory_);
-    	std::cout << "Buffer of size " << maxSize_ << " deleted." << '\n';
-    	std::cout << '\n';
+    	//std::cout << "Buffer of size " << maxSize_ << " deleted." << '\n';
+    	//std::cout << '\n';
     }
 
     char* GetMemory();
@@ -44,22 +46,22 @@ char* LinearAllocator::alloc(int size)
 		offset_ += size;
 		if((offset_ - memory_) < maxSize_)
 		{
-			std::cout << "Offset is currently on " << offset_ - memory_ << " position." << '\n';
-			std::cout << "Available data is from " << (offset_ - size) - memory_ << " to " << (offset_ - 1) - memory_ << " position." << '\n';
-			std::cout << '\n';
+			//std::cout << "Offset is currently on " << offset_ - memory_ << " position." << '\n';
+			//std::cout << "Available data is from " << (offset_ - size) - memory_ << " to " << (offset_ - 1) - memory_ << " position." << '\n';
+			//std::cout << '\n';
 		}
 		else
 		{
-			std::cout << "Available data is from " << (offset_ - size) - memory_ << " to " << (offset_ - 1) - memory_ << " position." << '\n';
-			std::cout << "Free space is over. If you want more space, please, reset the buffer and use memory again." << '\n';
-			std::cout << '\n';		
+			//std::cout << "Available data is from " << (offset_ - size) - memory_ << " to " << (offset_ - 1) - memory_ << " position." << '\n';
+			//std::cout << "Free space is over. If you want more space, please, reset the buffer and use memory again." << '\n';
+			//std::cout << '\n';		
 		}
 		return offset_ - size;
 	}
 	else
 	{
-		std::cout <<"There are only " << maxSize_ - (offset_ - memory_) << " bytes left. Please, try one more time." << '\n';
-		std::cout << '\n';
+		//std::cout <<"There are only " << maxSize_ - (offset_ - memory_) << " bytes left. Please, try one more time." << '\n';
+		//std::cout << '\n';
 		return nullptr;
 	}
 
@@ -69,7 +71,8 @@ char* LinearAllocator::alloc(int size)
 void LinearAllocator::reset()
 {
 	offset_ = memory_;
-	std::cout << "Successful reset" << '\n';
-	std::cout << "Offset is currently on " << offset_ - memory_ << " position." << '\n';	
-	std::cout << '\n';
+	//std::cout << "Successful reset" << '\n';
+	//std::cout << "Offset is currently on " << offset_ - memory_ << " position." << '\n';	
+	//std::cout << '\n';
 }
+

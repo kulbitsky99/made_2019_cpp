@@ -1,0 +1,19 @@
+Buffer of size 20 created. Ready to be used.
+
+Offset is currently on 15 position.
+Available data is from 0 to 14 position.
+
+Offset is currently on 18 position.
+Available data is from 15 to 17 position.
+
+There are only 2 bytes left. Please, try one more time.
+
+Available data is from 18 to 19 position.
+Free space is over. If you want more space, please, reset the buffer and use memory again.
+
+Successful reset
+Offset is currently on 0 position.
+
+Offset is currently on 15 position.
+Available data is from 0 to 14 position.
+
