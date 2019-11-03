@@ -12,7 +12,7 @@ unit_test:
 	$(CC) -o unit_test test_calc.cpp
 
 run:
-	./my_prog calc "2 + 2 --2*4 |8+2 "
+	./my_prog calc "(5+4--2)"
 
 test:
 	./unit_test
