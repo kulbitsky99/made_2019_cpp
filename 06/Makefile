@@ -1,15 +1,21 @@
 CC=g++
 
-all: bint
+all: bint unit_test
 
-bint: BigInt.o 
-	$(CC) -o  bint BigInt.o
-
-BigInt.o: 
+calc.o:
 	$(CC) -c BigInt.cpp BigInt.h
+
+bint: 
+	$(CC) -o bint main.cpp
+
+unit_test: 
+	$(CC) -o unit_test BigInt_test.cpp
 
 run:
 	./bint
 
+test:
+	./unit_test
+
 clean:
-	rm -rf *.o *.gch bint
+	rm -rf  *.o *.gch bint unit_test
