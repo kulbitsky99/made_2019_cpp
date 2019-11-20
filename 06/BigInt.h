@@ -27,6 +27,7 @@ public:
 	BigInt& operator=(const BigInt& copied)
 	{
 		big_number_ = (char*)realloc(big_number_, copied.size_ + 2);
+		assert(big_number_);
 		for(int i = 0; i < copied.size_; i++)
 		{
 			big_number_[i] = copied.big_number_[i];
