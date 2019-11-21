@@ -1,4 +1,4 @@
-#include "BigInt.cpp"
+#include "BigInt.h"
 
 int main()
 {
