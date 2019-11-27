@@ -1,4 +1,4 @@
-#include "calc.cpp"
+#include "calc.cpp" // calc.h of course
 
 using namespace std;
 
